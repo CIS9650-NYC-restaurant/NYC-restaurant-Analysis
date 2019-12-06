@@ -1,0 +1,116 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 21 14:01:53 2019
+
+@author: troys
+"""
+import matplotlib.pyplot as plt
+import pandas as pd
+import math
+
+
+
+df=pd.read_csv("DOHMH_New_York_City_Restaurant_Inspection_Results.csv", encoding='latin1')
+df = df[["CAMIS", "DBA", "BORO", "ZIPCODE", "CUISINE DESCRIPTION", "VIOLATION CODE", \
+         "VIOLATION DESCRIPTION","CRITICAL FLAG","SCORE","GRADE","INSPECTION TYPE", "Latitude","Longitude"]]
+df.columns = ["id", "name", "boro", "zipcode", "foodtype", "viocode", "viodetail","critical","score","grade","inspectype", "latitude", "longtitude"]
+df = df.dropna()
+
+
+
+
+
+
+print("Scores base on borough")
+print("===========================================")
+boro = df.groupby("boro")
+boroNames = boro["score"].mean().reset_index()["boro"].tolist()
+boroScores = boro["score"].mean().reset_index()["score"].tolist()
+low = min(boroScores)
+high = max(boroScores)
+plt.ylim([math.ceil(low-1), math.ceil(high+1)])
+ax = plt.bar(boroNames, boroScores, align='center', alpha=0.8) 
+plt.ylabel('Score')
+plt.title('Scores base on borough')
+plt.show()
+
+
+
+
+
+
+print("\nTop ten average score for cuisine type")
+print("===========================================")
+foodType = df.groupby("foodtype")["score"].mean()
+foodList = foodType.nlargest(10).reset_index()["foodtype"].tolist()
+foodAvgScore = foodType.nlargest(10).reset_index()["score"].tolist()
+
+plt.title('Top ten average score for cuisine type', fontsize = 15)
+plt.barh(foodList, foodAvgScore)
+plt.gca().invert_yaxis()
+plt.xlabel("Average score", labelpad=14)
+plt.ylabel("Food type", labelpad=14)
+plt.show()
+
+
+
+
+
+
+print("\nTop ten violation detail")
+print("===========================================")
+detail = df.groupby("viodetail").count()["id"].nlargest(10).reset_index()["viodetail"].tolist()
+
+count = df.groupby("viodetail").count()["id"].nlargest(10).reset_index()["id"].tolist()
+
+plt.barh(detail, count, align='center')
+plt.gca().invert_yaxis()
+plt.xlabel("Count", labelpad=14)
+plt.ylabel("Violation type", labelpad=14)
+plt.show()
+
+
+
+print("\nBoxplot of the count of inspections per Borough")
+print("===========================================")
+print(df["boro"].value_counts())
+boxplotB = df["boro"].hist()
+plt.title('Boxplot of the count of inspections per Borough', fontsize = 15)
+plt.xlabel('Borough', fontsize = 12)
+
+
+
+
+print("\n\n\nBreakdown of the grades across the boroughs")
+print("===========================================")
+boro_grade = pd.crosstab(df.grade, df.boro, margins = True)
+print(boro_grade)
+
+
+
+
+
+print("\n\n\nGrade Distribution by Boroug")
+print("===========================================")
+pd.crosstab(df.boro, df.grade).plot(kind="bar", stacked=True)
+plt.title('Grade Distribution by Borough', fontsize = 15)
+
+
+
+
+print("\n\n\n Grade A Percentage Distribution by Boro")
+print("===========================================")
+count = df.groupby("boro").count().id
+countA = df[df["grade"] == "A"].groupby("boro").count().id
+Aperc = countA.divide(count)
+print(Aperc)
+ax = Aperc.plot(kind="bar")
+plt.ylim(0.725, 0.9)
+plt.title('Grade A Percentage Distribution by Borough', fontsize = 15)
+for p in ax.patches:
+    ax.annotate(str(round(p.get_height(),2)*100)+"%", xy=(p.get_x(), p.get_height()))
+
+
+
+
+
