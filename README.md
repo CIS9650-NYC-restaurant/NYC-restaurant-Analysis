@@ -18,5 +18,12 @@ NYC Rat Sightings
 
 https://www.kaggle.com/new-york-city/nyc-rat-sightings/download 
 
- The above dataset is obtained from Kaggle but originally from NYC open data. It is based on 311 calls complaining about rodent sighting. The data was recorded from 2010 to Sep 16th, 2017. Some basic entries in this data set are borough name, zip code and status.
+The above dataset is obtained from Kaggle but originally from NYC open data. It is based on 311 calls complaining about rodent sighting. The data was recorded from 2010 to Sep 16th, 2017. Some basic entries in this data set are borough name, zip code and status.
+
+yelp_rating_grade
+
+https://akshayvaghani.shinyapps.io/NYC_Restaurants/
+
+The above dataset is copied from the above weblink and saved as a csv file, which can be find on this repository. The original dataset has 14,418 entries but only 5500 of them are used for this project. The dataset contains inspection scores, grade and rating for 5500 restaurants in NYC. The original data was collected and cleaned from Yelp's API and NYC open data website.
+
 
