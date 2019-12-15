@@ -1,4 +1,4 @@
-**NYC restaurants Analysis on common violation and yelp rating**
+**NYC restaurants Analysis**
 
 By Group 4(Menghui Huang, Min Ah Park, Qifeng Sun, Rui Wang, Yining Yao)
 
@@ -25,5 +25,14 @@ yelp_rating_grade
 https://akshayvaghani.shinyapps.io/NYC_Restaurants/
 
 The above dataset is copied from the above weblink and saved as a csv file, which can be find on this repository. The original dataset has 14,418 entries but only 5500 of them are used for this project. The dataset contains inspection scores, grade and rating for 5500 restaurants in NYC. The original data was collected and cleaned from Yelp's API and NYC open data website.
+
+*Analysis Summary*
+
+*File Directory*
+
+Python files used to generate graphs used in presentation ppt can be find in code folder.
+To understand meaning of each code use ri-violation-penalty.pdf file
+
+
 
 
