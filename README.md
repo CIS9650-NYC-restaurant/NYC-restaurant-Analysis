@@ -1,4 +1,4 @@
-###**NYC restaurants Analysis on common violation and yelp rating**
+###NYC restaurants Analysis on common violation and yelp rating
 #By Group 4(Menghui Huang, Min Ah Park, Qifeng Sun, Rui Wang, Yining Yao)
 
 Problem Statement:
