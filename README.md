@@ -1,5 +1,5 @@
-**NYC restaurants Analysis on common violation and yelp rating**
-By Group 4(Menghui Huang, Min Ah Park, Qifeng Sun, Rui Wang, Yining Yao)
+###**NYC restaurants Analysis on common violation and yelp rating**
+#By Group 4(Menghui Huang, Min Ah Park, Qifeng Sun, Rui Wang, Yining Yao)
 
 Problem Statement:
 New York City is a big metropolis which is not only known for its prosperous streets but also diversified restaurants.  There are millions of restaurants in NYC and they are regulated by Department of Health and Mental Hygiene (DOHMH). Our problem rises as how can we help our restaurant owners or future restaurant owners to achieve better grades for their restaurants. We would like to find an insight on restaurant grading based on its cuisine type and other variables such as borough, and violation code.  
