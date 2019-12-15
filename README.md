@@ -31,7 +31,11 @@ The above dataset is copied from the above weblink and saved as a csv file, whic
 *File Directory*
 
 Python files used to generate graphs used in presentation ppt can be find in code folder.
-To understand meaning of each code use ri-violation-penalty.pdf file
+
+To understand meaning of each violation code use ri-violation-penalty.pdf file.
+
+Datasets can be found in data folder or downloaded using given links.
+
 
 
 
