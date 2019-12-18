@@ -46,6 +46,7 @@ To understand meaning of each violation code use ri-violation-penalty.pdf file.
 
 Datasets can be found in data folder or downloaded using given links.
 
+Presentation slides is named as "slides final project".
 
 
 
