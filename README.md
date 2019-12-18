@@ -28,6 +28,16 @@ The above dataset is copied from the above weblink and saved as a csv file, whic
 
 *Analysis Summary*
 
+Restaurants selling different cuisines do have difference in their top 10 common violations. Future restaurant owners can focus on those violations based on their cusine types.
+
+Restaurants in Bronx have highest frequency in receiving 04K/04L violations(rat sighting). However, there are much more rat sighting reports in Brooklyn.
+
+Restaurants in Staten Island have highest percent of Grade A.
+
+Restaurants receiving grade A have slightly higher yelp rating. 
+
+Manhattan has most restaurants compared to other 4 boroughes. The two most restaurants are American and Chinese.
+
 *File Directory*
 
 Python files used to generate graphs used in presentation ppt can be find in code folder.
